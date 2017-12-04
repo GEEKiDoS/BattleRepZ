@@ -1,0 +1,167 @@
+<!-- INCLUDE overall_header.html -->
+<!-- INCLUDE breadcrums.html -->
+<div id="pageActions">
+	<div class="buttons" style="float:left;margin-right:10px">
+		<!-- IF SEARCH_TOPIC -->
+		<a href="{U_SEARCH_TOPIC}"><button type="button">{L_RETURN_TO_TOPIC}</button></a>
+		<!-- ENDIF -->
+	</div>
+
+	<form action="{U_SEARCH}" style="float:left" method="get" id="search">
+		<fieldset>
+			<input name="keywords" id="keywords" type="text" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="inputbox search" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ELSE -->{L_SEARCH_MINI}<!-- ENDIF -->" onclick="if(this.value=='{LA_SEARCH_MINI}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_MINI}';" />
+			<input value="SEARCH" type="submit" />
+		</fieldset>
+	</form>
+
+</div>
+
+<div class="forum">
+	
+    <div class="heading">
+        <div class="cell first">
+          <p>
+            SEARCH RESULTS FOR “{SEARCHED_QUERY}”
+          </p>
+        </div>
+        <div class="cell second">
+          <p>
+            {L_VIEWS}
+          </p>
+        </div>
+			<div class="cell third">
+          <p>
+            {L_REPLIES}
+          </p>
+        </div>
+        <div class="cell fourth">
+          <p>
+            Post Details
+          </p>
+        </div>
+    </div>
+
+	<!-- IF S_SHOW_TOPICS -->
+
+		<!-- IF .searchresults -->
+			<!-- BEGIN searchresults -->
+			<div class="rows">
+			    <a class="cell first" href="{searchresults.U_VIEW_TOPIC}">
+			        <h4>
+			          {searchresults.POST_SUBJECT}
+			        </h4>
+			        
+			        	<p>
+			              in {searchresults.TOPIC_TITLE}
+			            </p>
+			        
+			    </a>
+			    <a class="cell second number" href="./viewforum.php?f=2">
+			        <h4>
+			          {searchresults.TOPIC_VIEWS}
+			        </h4>
+			    </a>
+			    <a class="cell third number" href="./viewforum.php?f=2">
+			        <h4>
+			          {searchresults.TOPIC_REPLIES}
+			        </h4>
+			    </a>
+			    <div class="cell fourth" href="#">
+			    	
+						 <a class="title" href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_TITLE}</a>
+						 <div>
+							 <span class="timeAgo">{searchresults.POST_DATE} By <a href="#">{searchresults.POST_AUTHOR}</a></span>
+						 </div>
+			       		
+			       	
+				</div>
+			</div>
+			<!-- END searchresults -->
+		<!-- ELSE -->
+			<div class="panel">
+				<div class="inner">
+				<strong>{L_NO_SEARCH_RESULTS}</strong>
+				</div>
+			</div>
+		<!-- ENDIF -->
+
+	<!-- ELSE -->
+
+		<!-- BEGIN searchresults -->
+				<!-- IF not searchresults.S_IGNORE_POST -->
+
+					<div class="rows">
+					    <a class="cell first" href="{searchresults.U_VIEW_TOPIC}">
+					        <h4>
+					          {searchresults.POST_SUBJECT}
+					        </h4>
+					        
+					        	<p>
+					              in {searchresults.TOPIC_TITLE}
+					            </p>
+					        
+					    </a>
+					    <a class="cell second number" href="./viewforum.php?f=2">
+					        <h4>
+					          {searchresults.TOPIC_VIEWS}
+					        </h4>
+					    </a>
+					    <a class="cell third number" href="./viewforum.php?f=2">
+					        <h4>
+					          {searchresults.TOPIC_REPLIES}
+					        </h4>
+					    </a>
+					    <div class="cell fourth" href="#">
+					    	
+								 <a class="title" href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_TITLE}</a>
+								 <div>
+									 <span class="timeAgo">{searchresults.POST_DATE} By <a href="#">{searchresults.POST_AUTHOR}</a></span>
+								 </div>
+					       		
+					       	
+						</div>
+					</div>
+
+				<!-- ENDIF -->
+		<!-- BEGINELSE -->
+			<div class="panel">
+				<div class="inner">
+					<strong>{L_NO_SEARCH_RESULTS}</strong>
+				</div>
+			</div>
+		<!-- END searchresults -->
+
+	<!-- ENDIF -->
+
+			<!-- IF .pagination or .searchresults or S_SELECT_SORT_KEY or S_SELECT_SORT_DAYS -->
+				<form method="post" action="{S_SEARCH_ACTION}">
+
+				<fieldset class="display-options">
+					<!-- IF S_SELECT_SORT_DAYS or S_SELECT_SORT_KEY -->
+						<label><!-- IF S_SHOW_TOPICS -->{L_DISPLAY_POSTS}<!-- ELSE -->{L_SORT_BY}</label><label><!-- ENDIF --> {S_SELECT_SORT_DAYS}<!-- IF S_SELECT_SORT_KEY --></label> <label>{S_SELECT_SORT_KEY}</label>
+						<label>{S_SELECT_SORT_DIR}<!-- ENDIF --></label>
+						<input type="submit" name="sort" value="{L_GO}" class="button2" />
+					<!-- ENDIF -->
+				</fieldset>
+
+				</form>
+
+				<hr />
+			<!-- ENDIF -->
+
+			<!-- IF .pagination or .searchresults or PAGE_NUMBER -->
+			<div class="action-bar bottom">
+				<div class="pagination">
+					{SEARCH_MATCHES}
+					<!-- IF .pagination -->
+						<!-- INCLUDE pagination.html -->
+					<!-- ELSE -->
+						 &bull; {PAGE_NUMBER}
+					<!-- ENDIF -->
+				</div>
+			</div>
+			<!-- ENDIF -->
+
+</div>
+
+<!-- INCLUDE overall_footer.html -->

@@ -1,0 +1,202 @@
+<!-- INCLUDE overall_header.html -->
+
+<!-- IF not S_HAS_SUBFORUM -->
+	<!-- INCLUDE breadcrums.html -->
+
+	<div id="pageActions">
+		<div class="buttons" style="float:left;margin-right:10px">
+			<a href="{U_POST_NEW_TOPIC}"><button type="button">{L_POST_NEW_TOPIC}</button></a>
+		</div>
+
+		<form action="{U_SEARCH}" style="float:left" method="get" id="search">
+			<fieldset>
+				<input name="keywords" id="keywords" type="text" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="inputbox search" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ELSE -->{L_SEARCH_MINI}<!-- ENDIF -->" onclick="if(this.value=='{LA_SEARCH_MINI}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_MINI}';" />
+				<input value="SEARCH" type="submit" />
+			</fieldset>
+		</form>
+	</div>
+<!-- ENDIF -->
+
+<!-- IF S_HAS_SUBFORUM -->
+	<!-- INCLUDE forumlist_body.html -->
+<!-- ENDIF -->
+
+<!-- IF S_NO_READ_ACCESS -->
+
+	<div class="panel">
+		<div class="inner"><span class="corners-top"><span></span></span>
+		<strong>{L_NO_READ_ACCESS}</strong>
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
+
+		<form action="{S_LOGIN_ACTION}" method="post">
+
+		<div class="panel">
+			<div class="inner"><span class="corners-top"><span></span></span>
+
+			<div class="content">
+				<h3><a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a><!-- IF S_REGISTER_ENABLED -->&nbsp; &bull; &numbersp;<a href="{U_REGISTER}">{L_REGISTER}</a><!-- ENDIF --></h3>
+
+				<fieldset class="fields1">
+				<dl>
+					<dt><label for="username">{L_USERNAME}:</label></dt>
+					<dd><input type="text" tabindex="1" name="username" id="username" size="25" value="{USERNAME}" class="inputbox autowidth" /></dd>
+				</dl>
+				<dl>
+					<dt><label for="password">{L_PASSWORD}:</label></dt>
+					<dd><input type="password" tabindex="2" id="password" name="password" size="25" class="inputbox autowidth" /></dd>
+					<!-- IF S_AUTOLOGIN_ENABLED --><dd><label for="autologin"><input type="checkbox" name="autologin" id="autologin" tabindex="3" /> {L_LOG_ME_IN}</label></dd><!-- ENDIF -->
+					<dd><label for="viewonline"><input type="checkbox" name="viewonline" id="viewonline" tabindex="4" /> {L_HIDE_ME}</label></dd>
+				</dl>
+				<dl>
+					<dt>&nbsp;</dt>
+					<dd><input type="submit" name="login" tabindex="5" value="{L_LOGIN}" class="button1" /></dd>
+				</dl>
+				{S_LOGIN_REDIRECT}
+				</fieldset>
+			</div>
+
+			<span class="corners-bottom"><span></span></span></div>
+		</div>
+
+		</form>
+
+	<!-- ENDIF -->
+
+<!-- ENDIF -->
+
+<!-- BEGIN topicrow -->
+	<!-- IF topicrow.S_FIRST_ROW -->
+		<div class="forum">
+	<!-- ENDIF -->
+
+	<!-- IF topicrow.S_FIRST_ROW or not topicrow.S_TOPIC_TYPE_SWITCH -->
+	    <div class="heading">
+	        <div class="cell first">
+	          <p>
+	            <!-- IF S_DISPLAY_ACTIVE -->{L_ACTIVE_TOPICS}<!-- ELSEIF topicrow.S_TOPIC_TYPE_SWITCH and (topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL) -->{L_ANNOUNCEMENTS}<!-- ELSE -->{L_TOPICS}<!-- ENDIF -->
+	          </p>
+	        </div>
+	        <div class="cell second">
+	          <p>
+	            {L_REPLIES}
+	          </p>
+	        </div>
+				<div class="cell third">
+	          <p>
+	            {L_VIEWS}
+	          </p>
+	        </div>
+	        <div class="cell fourth">
+	          <p>
+	            {L_LAST_POST}
+	          </p>
+	        </div>
+	    </div>
+    <!-- ENDIF -->
+
+    <div class="rows">
+        <a class="cell first" href="{topicrow.U_VIEW_TOPIC}">
+        	<h4>
+               {topicrow.TOPIC_TITLE}
+            </h4>
+            <p>
+              by {topicrow.TOPIC_AUTHOR}. » {topicrow.LAST_POST_TIME}
+            </p>
+        </a>
+        <a class="cell second number" href="{topicrow.U_VIEW_TOPIC}">
+            <h4>
+              {topicrow.REPLIES}
+            </h4>
+        </a>
+        <a class="cell third number" href="{topicrow.U_VIEW_TOPIC}">
+            <h4>
+              {topicrow.VIEWS}
+            </h4>
+        </a>
+        <div class="cell fourth" href="#">
+        	<!-- IF topicrow.LAST_POST_TIME -->
+				 <a class="title" href="{topicrow.U_LAST_POST}">{topicrow.TOPIC_AUTHOR}</a>
+					 <div>
+						 <span class="timeAgo">{topicrow.LAST_POST_TIME}</span>
+					 </div>
+	       		</a>
+	       	<!-- ENDIF -->
+    	</div>
+	</div>
+
+	<!-- IF topicrow.S_LAST_ROW  -->
+		</div>
+	<!-- ENDIF -->
+
+<!-- BEGINELSE -->
+<!--
+	<div class="forum">
+	    <div class="heading">
+	        <div class="cell first">
+	          <p>
+	            Title
+	          </p>
+	        </div>
+	        <div class="cell second">
+	          <p>
+	            Replies
+	          </p>
+	        </div>
+				<div class="cell third">
+	          <p>
+	            Views
+	          </p>
+	        </div>
+	        <div class="cell fourth">
+	          <p>
+	            Latest post
+	          </p>
+	        </div>
+	    </div>
+
+	    <div class="rows">
+	        <a class="cell first" href="#">
+	            <h4>
+	              NO TOPIC
+	            </h4>
+	            <p>
+	              
+	            </p>
+	        </a>
+	        <a class="cell second number" href="#">
+	            <h4>
+	              -
+	            </h4>
+	        </a>
+	        <a class="cell third number" href="#">
+	            <h4>
+	              -
+	            </h4>
+	        </a>
+	        <div class="cell fourth" href="#">
+				 
+	    	</div>
+		</div>
+	</div>
+-->
+<!-- END topicrow -->
+
+<div class="buttons" style="float:left">
+	<a href="{U_MARK_TOPICS}"><button type="button">{L_MARK_TOPICS_READ}</button></a>
+	<a href="{U_POST_NEW_TOPIC}"><button type="button">{L_POST_NEW_TOPIC}</button></a>
+</div>
+
+<div class="pagination" style="float: right;">
+	<!-- IF PAGINATION -->
+		{TOTAL_TOPICS} <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> <span>{PAGINATION}</span>
+	<!-- ELSE -->
+		{TOTAL_TOPICS} {PAGE_NUMBER}
+	<!-- ENDIF -->
+</div>
+
+<div class="delimiter"></div>
+
+<!-- INCLUDE overall_footer.html -->

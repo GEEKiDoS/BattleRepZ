@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}" xml:lang="{S_USER_LANG}">
+<head>
+	<title>{SITENAME} &bull; <!-- IF S_IN_MCP -->{L_MCP} &bull; <!-- ELSEIF S_IN_UCP -->{L_UCP} &bull; <!-- ENDIF -->{PAGE_TITLE}</title>
+
+	<!-- IF S_ENABLE_FEEDS -->
+		<!-- IF S_ENABLE_FEEDS_OVERALL --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {SITENAME}" href="{U_FEED}" /><!-- ENDIF -->
+		<!-- IF S_ENABLE_FEEDS_NEWS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_NEWS}" href="{U_FEED}?mode=news" /><!-- ENDIF -->
+		<!-- IF S_ENABLE_FEEDS_FORUMS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_ALL_FORUMS}" href="{U_FEED}?mode=forums" /><!-- ENDIF -->
+		<!-- IF S_ENABLE_FEEDS_TOPICS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_NEW}" href="{U_FEED}?mode=topics" /><!-- ENDIF -->
+		<!-- IF S_ENABLE_FEEDS_TOPICS_ACTIVE --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_ACTIVE}" href="{U_FEED}?mode=topics_active" /><!-- ENDIF -->
+		<!-- IF S_ENABLE_FEEDS_FORUM and S_FORUM_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FORUM} - {FORUM_NAME}" href="{U_FEED}?f={S_FORUM_ID}" /><!-- ENDIF -->
+		<!-- IF S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_TOPIC} - {TOPIC_TITLE}" href="{U_FEED}?f={S_FORUM_ID}&amp;t={S_TOPIC_ID}" /><!-- ENDIF -->
+	<!-- ENDIF -->
+
+	<meta http-equiv="content-type" content="text/html; charset={S_CONTENT_ENCODING}" />
+	<meta http-equiv="content-style-type" content="text/css" />
+	<meta http-equiv="content-language" content="{S_USER_LANG}" />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="resource-type" content="document" />
+	<meta name="distribution" content="global" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+
+	{META}
+	<link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link href="/friends/static/friends.css" rel="stylesheet" type="text/css" />
+
+	<script src="{T_THEME_PATH}/js/libs/jquery.js"></script>
+	<script src="{T_THEME_PATH}/js/libs/jquery.pjax.js"></script>
+	<script src="{T_THEME_PATH}/js/libs/modernizr.js"></script>
+	<script src="{T_THEME_PATH}/js/libs/fabricjs.js"></script>
+
+</head>
+
+<body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION} online">
+	<div id="background">
+		<video id="backgroundVideo" autoplay loop name="media" preload="auto">
+
+			<source media="screen" src="/styles/RepZ/theme/bg/video.webm" type="video/webm">
+			<source media="screen" src="/styles/RepZ/theme/bg/video.ogv" type="video/ogv">
+			<source media="screen" src="/styles/RepZ/theme/bg/video.mp4" type="video/mp4">
+				
+		</video>
+	</div>
+
+	<div id="contentBackground"></div>
+
+	<header id="heading">
+	 	
+ 		<div class="wrapper">
+
+ 			<div class="options left">
+	 			
+	 			<div class="miscellaneous">
+		 			<i class="fa fa-caret-square-o-down fa-2x"></i>
+		 			<div class="menu">
+					  <ul>
+					  	<li><a href="#">View unanswered posts</a></li>
+					  	<li><a href="#">View unread posts</a></li>
+					  	<li><a href="#">View new posts</a></li>
+					  	<li><a href="#">View active topics</a></li>
+					  	<!-- IF not S_IS_BOT and U_MARK_FORUMS -->
+					  		<li><a href="{U_MARK_FORUMS}">{L_MARK_SUBFORUMS_READ}</a></li>
+					  	<!-- ENDIF -->
+					  	<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}">FAQ</a></li>
+					</div>
+		 		</div>
+ 			</div>
+
+ 			<a href="/"><img src="{T_THEME_PATH}/images/logo.png" id="logo"></a>
+ 			
+ 			<div class="options right">
+	 			
+	 			<div class="profile">
+	 				<!-- IF S_USER_AVATAR_TYPE == 1 -->
+	 					<img class="avatar" src="/download/file.php?avatar={S_USER_AVATAR}" width="45px" height="45px" />
+	 				<!-- ELSE -->
+	 					<img class="avatar" src="/friends/static/soldier.png" width="45px" height="45px" />
+	 				<!-- ENDIF -->
+
+	 				<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+	 					<a class="username">{S_USERNAME}</a>
+	 				<!-- ENDIF -->
+	 				<!-- IF S_IS_BOT or not S_USER_LOGGED_IN -->
+	 					<a href="/ucp.php?mode=login" class="username">Login / Register</a>
+	 				<!-- ENDIF -->	
+	 				<div class="menu">
+					  <ul>
+					  	<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+						  	<li><a href="{U_SEARCH_SELF}">{L_SEARCH_SELF}</a></li>
+						  	<li><a href="{U_PRIVATEMSGS}">{PRIVATE_MESSAGE_INFO}</a></li>
+						  	<li><a href="{U_PROFILE}" title="{L_PROFILE}">Account details</a></li>
+						  	<!-- IF U_RESTORE_PERMISSIONS -->
+						  		<li><a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li>
+						  	<!-- ENDIF -->
+						  	<!-- IF U_MCP -->
+						  		<li><a href="{U_MCP}">{L_MCP}</a></li>
+						  	<!-- ENDIF -->
+						  	<!-- IF U_ACP -->
+						  		<li><a href="{U_ACP}">{L_ACP}</a></li>
+						  	<!-- ENDIF -->
+						  	<li><a href="{U_LOGIN_LOGOUT}">Logout</a></li>
+					  	<!-- ENDIF -->
+					</div>
+	 			
+	 			</div>
+
+ 			</div>
+
+ 		</div>
+
+
+ 		<div id="menu">
+
+	 		<div class="wrapper">
+	 			<!-- must find a better way of doing this... -->
+	 			 <ul>
+					 <li class="<!-- IF PAGE_TITLE == "Servers" -->active<!-- ENDIF -->">
+						 <a href="/servers/">Servers</a>
+					 </li>
+
+					 <li class="<!-- IF PAGE_TITLE != "Servers" && PAGE_TITLE != "Clans" && PAGE_TITLE != "Customize emblem" -->active<!-- ENDIF -->">
+					 	<a href="/">Forum</a>
+					 </li>
+
+					 <li class="<!-- IF PAGE_TITLE == "Clans" || PAGE_TITLE == "Customize emblem" -->active<!-- ENDIF -->">
+					 	<a href="/clans/">Clans</a>
+					 </li>
+
+					 <li>
+					 	<a href="#/downloads/">Downloads</a>
+					 </li>
+					 
+
+				 </ul>
+
+	 		</div>
+
+			</div>
+
+	</header>
+	<div id="loadingProgress">
+
+	</div>
+
+	<div id="wrapper">
+ 		
+ 		<div class="notification" style="display: none">
+
+			<div class="alert info large"><i class="fa fa-exclamation-triangle fa-3x"></i>Some would call it love</div>
+			
+		</div>
+
+		<div class="pageTitle">
+			<!-- IF TOPIC_TITLE -->
+		 		<h1>{TOPIC_TITLE}</h1>
+		 	<!-- ELSEIF FORUM_NAME-->
+		 		<h1>{FORUM_NAME}</h1>
+ 			<!-- ELSEIF PAGE_TITLE == "Index page"-->
+ 				<h1>Forum</h1>
+		 	<!-- ELSE -->
+		 		<h1>{PAGE_TITLE}</h1>
+		 	<!-- ENDIF -->
+		</div>
+
+		<div id="content">

@@ -1,0 +1,56 @@
+<!-- INCLUDE overall_header.html -->
+
+<form action="{S_LOGIN_ACTION}" method="post" id="login" data-focus="<!-- IF S_ADMIN_AUTH -->{PASSWORD_CREDENTIAL}<!-- ELSE -->{USERNAME_CREDENTIAL}<!-- ENDIF -->">
+<div class="panel" id="login">
+	<div class="inner">
+
+	<div class="content">
+		<fieldset <!-- IF not S_CONFIRM_CODE -->class="fields1"<!-- ELSE -->class="fields2"<!-- ENDIF -->>
+		<!-- IF LOGIN_ERROR --><div class="error">{LOGIN_ERROR}</div><!-- ENDIF -->
+		<dl>
+			<dt><label for="{USERNAME_CREDENTIAL}">{L_USERNAME}</label></dt>
+			<dd><input type="text" tabindex="1" name="{USERNAME_CREDENTIAL}" id="{USERNAME_CREDENTIAL}" size="28" value="{USERNAME}" class="inputbox autowidth" /></dd>
+		</dl>
+		
+		<dl>
+			<dt><label for="{PASSWORD_CREDENTIAL}">{L_PASSWORD}</label></dt>
+			<dd><input type="password" tabindex="2" id="{PASSWORD_CREDENTIAL}" name="{PASSWORD_CREDENTIAL}" size="28" class="inputbox autowidth" /></dd>
+		</dl>
+		<!-- IF CAPTCHA_TEMPLATE and S_CONFIRM_CODE -->
+			<!-- DEFINE $CAPTCHA_TAB_INDEX = 3 -->
+			<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
+		<!-- ENDIF -->
+		<!-- IF S_DISPLAY_FULL_LOGIN -->
+		<dl>
+			<!-- IF S_AUTOLOGIN_ENABLED --><dd <label for="autologin"><input type="checkbox" name="autologin" checked="checked" id="autologin" tabindex="4" />Remember me</label><!-- IF U_SEND_PASSWORD --><a style="float:right; margin-top:5px;" href="{U_SEND_PASSWORD}">{L_FORGOT_PASS}</a><!-- ENDIF --></dd><!-- ENDIF -->
+		</dl>
+		<!-- ENDIF -->
+
+		{S_LOGIN_REDIRECT}
+		<dl>
+			<dt>&nbsp;</dt>
+			<!-- IF not S_ADMIN_AUTH and S_REGISTER_ENABLED -->
+			<dd><a href="{U_REGISTER}"><input type="button" style="float:left;margin-right:10px" value="{L_REGISTER}" /></a></dd>
+			<!-- ENDIF -->
+			<dd>{S_HIDDEN_FIELDS}<input type="submit" name="login" style="float:right;" tabindex="6" value="{L_LOGIN}" class="button1" /></dd>
+		</dl>
+		<br />
+		<br />
+		<!-- IF S_DISPLAY_FULL_LOGIN and (U_SEND_PASSWORD or U_RESEND_ACTIVATION) -->
+			<dl>
+				<dt>&nbsp;</dt>
+				<!-- IF U_RESEND_ACTIVATION --><dd style="text-align: center;"><a href="{U_RESEND_ACTIVATION}">{L_RESEND_ACTIVATION}</a></dd><!-- ENDIF -->
+			</dl>
+		<!-- ENDIF -->
+		</fieldset>
+	</div>
+
+	<!-- IF not S_ADMIN_AUTH and PROVIDER_TEMPLATE_FILE -->
+		<!-- INCLUDE {PROVIDER_TEMPLATE_FILE} -->
+	<!-- ENDIF -->
+	</div>
+</div>
+
+</form>
+
+<!-- INCLUDE overall_footer.html -->

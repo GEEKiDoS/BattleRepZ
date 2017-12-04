@@ -1,0 +1,7 @@
+/* Contains the media queries to make the design responsive */
+
+@media screen and (max-width: 1024px) {
+ 	#sb_friends {
+ 		display: none;
+ 	}
+}

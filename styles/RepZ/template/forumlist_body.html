@@ -1,0 +1,132 @@
+<!-- INCLUDE breadcrums.html -->
+
+<div id="pageActions">
+	<form action="{U_SEARCH}" method="get" id="search">
+		<fieldset>
+			<input name="keywords" id="keywords" type="text" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="inputbox search" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ELSE -->{L_SEARCH_MINI}<!-- ENDIF -->" onclick="if(this.value=='{LA_SEARCH_MINI}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_MINI}';" />
+			<input value="SEARCH" type="submit" />
+		</fieldset>
+	</form>
+</div>
+
+<!-- BEGIN forumrow -->
+	<!-- IF forumrow.S_FIRST_ROW -->
+		<div class="forum">
+	<!-- ENDIF -->
+
+	<!-- IF forumrow.S_IS_CAT -->
+	    <div class="heading">
+	        <div class="cell first">
+	          <p>
+	            {forumrow.FORUM_NAME}
+	          </p>
+	        </div>
+	        <div class="cell second">
+	          <p>
+	            {L_TOPICS}
+	          </p>
+	        </div>
+				<div class="cell third">
+	          <p>
+	            {L_POSTS}
+	          </p>
+	        </div>
+	        <div class="cell fourth">
+	          <p>
+	            {L_LAST_POST}
+	          </p>
+	        </div>
+	    </div>
+    <!-- ELSE -->
+
+    <div class="rows">
+        <a class="cell first" href="{forumrow.U_VIEWFORUM}">
+            <h4>
+              {forumrow.FORUM_NAME}
+            </h4>
+            <!-- IF forumrow.MODERATORS -->
+	            <p>
+	              {forumrow.FORUM_DESC} - {forumrow.MODERATORS}
+	            </p>
+	        <!-- ELSE -->
+	        	<p>
+	              {forumrow.FORUM_DESC}
+	            </p>
+	        <!-- ENDIF -->
+        </a>
+        <a class="cell second number" href="{forumrow.U_VIEWFORUM}">
+            <h4>
+              {forumrow.TOPICS}
+            </h4>
+        </a>
+        <a class="cell third number" href="{forumrow.U_VIEWFORUM}">
+            <h4>
+              {forumrow.POSTS}
+            </h4>
+        </a>
+        <div class="cell fourth" href="#">
+        	<!-- IF forumrow.LAST_POST_SUBJECT -->
+				 <a class="title" href="{forumrow.U_LAST_POST}">{forumrow.LAST_POST_SUBJECT}</a>
+					 <div>
+						 <span class="timeAgo">{forumrow.LAST_POST_TIME} By <a href="#">{forumrow.LAST_POSTER}</a></span>
+					 </div>
+	       		</a>
+	       	<!-- ENDIF -->
+    	</div>
+	</div>
+	<!-- ENDIF -->
+
+	<!-- IF forumrow.S_LAST_ROW  -->
+		</div>
+	<!-- ENDIF -->
+
+<!-- BEGINELSE -->
+	<div class="forum">
+	    <div class="heading">
+	        <div class="cell first">
+	          <p>
+	            Title
+	          </p>
+	        </div>
+	        <div class="cell second">
+	          <p>
+	            Topics
+	          </p>
+	        </div>
+				<div class="cell third">
+	          <p>
+	            Posts
+	          </p>
+	        </div>
+	        <div class="cell fourth">
+	          <p>
+	            Latest post
+	          </p>
+	        </div>
+	    </div>
+
+	    <div class="rows">
+	        <a class="cell first" href="forum.php">
+	            <h4>
+	              NO FORUMS
+	            </h4>
+	            <p>
+	              
+	            </p>
+	        </a>
+	        <a class="cell second number" href="#">
+	            <h4>
+	              -
+	            </h4>
+	        </a>
+	        <a class="cell third number" href="#">
+	            <h4>
+	              -
+	            </h4>
+	        </a>
+	        <div class="cell fourth" href="#">
+				 
+	    	</div>
+		</div>
+	</div>
+<!-- END forumrow -->

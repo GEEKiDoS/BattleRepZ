@@ -1,0 +1,38 @@
+<div class="panel" id="reviewBox">
+	<h3 id="review">
+		<span class="right-box"><a href="#review" onclick="viewableArea(getElementById('topicreview'), true); var rev_text = getElementById('review').getElementsByTagName('a').item(0).firstChild; if (rev_text.data == '{LA_EXPAND_VIEW}'){rev_text.data = '{LA_COLLAPSE_VIEW}'; } else if (rev_text.data == '{LA_COLLAPSE_VIEW}'){rev_text.data = '{LA_EXPAND_VIEW}'};">{L_EXPAND_VIEW}</a></span>
+		{L_TOPIC_REVIEW}{L_COLON} {TOPIC_TITLE}
+	</h3>
+</div>
+
+<div id="topicreview">
+<script type="text/javascript">
+// <![CDATA[
+	bbcodeEnabled = {S_BBCODE_ALLOWED};
+// ]]>
+</script>
+	<!-- BEGIN topic_review_row -->
+
+		<div class="reply">
+			<div class="message" style="margin:auto">
+				
+				<div class="header">
+					<div class="date">
+						{topic_review_row.POST_AUTHOR} @ {topic_review_row.POST_DATE}
+					</div>
+
+					<div class="options">
+						<a href="#postingbox" onclick="addquote({topic_review_row.POST_ID}, '{topic_review_row.POSTER_QUOTE}', '{LA_WROTE}');" title="{L_QUOTE} {topic_review_row.POST_AUTHOR}" class="button icon-button quote-icon"><span>{L_QUOTE}</span></a>
+					</div>
+				</div>
+
+				<div class="content">
+				  	{topic_review_row.MESSAGE}
+				</div>
+				<!-- IF topic_review_row.POSTER_QUOTE and topic_review_row.DECODED_MESSAGE -->
+					<div id="message_{topic_review_row.POST_ID}" style="display: none;">{topic_review_row.DECODED_MESSAGE}</div>
+				<!-- ENDIF -->
+			</div>
+		</div>
+	<!-- END topic_review_row -->
+</div>

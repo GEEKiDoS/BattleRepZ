@@ -1,0 +1,413 @@
+/*General forum crap, rows colum headings etc */
+.common-box-title {
+	color: #a8a8a8;
+	text-transform: uppercase;
+	font-size: 11px;
+	margin-bottom: 1px;
+	padding-top: 1px;
+	position: relative;
+}
+
+.forum-start-info {
+	height: 30px;
+	color: #a8a8a8;
+	position: relative;
+}
+
+.common-box-title {
+	color: #a8a8a8;
+	text-transform: uppercase;
+	font-size: 11px;
+	margin-bottom: 1px;
+	padding-top: 1px;
+}
+
+.common-box-title .forum-start-forum-headercell {
+	background: rgba(7, 7, 7, 0.8);
+	box-sizing: border-box;
+	float: left;
+}
+
+.forum-start-info .forum-start-forum-forum {
+	width: 61.6%;
+}
+
+.forum-start-forum-headercell {
+	height: auto;
+}
+
+.forum-start-forum-headercell.start p {
+	color: #fff;
+	font-size: 16px;
+	font-family: Conv_Purista light, sans-serif;
+	font-style: normal;
+	font-weight: 600;
+}
+
+.forum-start-forum-forum {
+	float: left;
+}
+
+.forum-start-white-title p {
+	color: #fff;
+	font-size: 16px;
+	font-family: Conv_Purista light, sans-serif;
+	font-style: normal;
+	font-weight: 600;
+}
+
+.forum-start-forum-forum p {
+	padding-left: 7px;
+}
+
+.forum-start-forum-headercell p {
+	font-weight: normal;
+	line-height: 30px;
+	color: ##D2D2D2;
+	margin-left: 9px;
+	margin-right: 14px;
+	font-size: 11px;
+}
+
+.forum-start-forum-posts {
+	width: 6.6%;
+	margin-left: 1px;
+}
+
+.forum-start-forum-topics {
+	width: 8.1%;
+	margin-left: 1px;
+}
+
+.forum-start-forum-latest {
+	width: 23.3%;
+	margin-left: 1px;
+}
+
+.common-box-container {
+	height: 55px;
+	width: 100%;
+	margin-bottom: 1px;
+}
+
+.forum-start-forum {
+	height: 55px;
+	position: relative;
+}
+
+.forum-forumlist .forumRow {
+	width: 599px;
+}
+
+.forumRow {
+	height: 55px;
+	background-color: rgba(7, 7, 7, 0.5);
+	padding-left: 16px;
+	padding-top: 10px;
+	height: 45px;
+	margin: 0;
+	position: relative;
+	float: left;
+	overflow: hidden;
+	white-space: nowrap;
+	margin-left: 1px;
+}
+
+.forumRow.name {
+	margin-left: 0px;
+}
+
+.common-box-container.unread > .forumRow.name {
+	border-left: 2px solid #989B9E;
+	width: 59% !important;
+}
+
+.forumRow.name {
+	width: 60%;
+}
+
+.forumRow.topics {
+	width: 8%;
+}
+
+.forumRow.posts {
+	width: 6.6%;
+}
+
+.forumRow.reply {
+	width: 21.8%;
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+.name {
+	display: inline-block;
+	width: 90%;
+}
+
+.data {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	padding-left: 0px;
+	padding-top: 10px;
+}
+
+.forumRow h4 {
+	font-size: 14px;
+	line-height: normal;
+	margin: 0;
+	font-family: Conv_Purista light, sans-serif;
+	font-weight: bold;
+	display: inline-block;
+	word-wrap: normal;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	color: #fff;
+}
+
+.forum-forumlist .forumRow p {
+	color: #a8a8a8;
+}
+
+.forumRow p {
+	color: #969696;
+	width: 97%;
+	word-wrap: normal;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-size: 12px;
+	margin-top: 2px;
+	font-weight: normal;
+	padding-bottom: 1px;
+}
+
+.forum {
+	height: auto;
+	position: relative;
+	margin-bottom: 30px;
+}
+
+/*Reply box (TODO: make this a little better) */
+.forum-start-container .forum-start-forum-bodycell a {
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.forum-start-forum-latest .avatar {
+	float: right;
+	margin-top: 16px;
+	margin-right: 8px;
+}
+
+.forumRow.reply {
+	font-size: 11px;
+	overflow: hidden;
+	color: #a8a8a8;
+}
+
+.forumRow.reply a.forum-start-forum-latest-info-title {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	width: 95%;
+	float: left;
+	height: 15px;
+}
+
+.forum-start-container .forum-start-forum-bodycell a {
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.forumRow.reply a {
+	white-space: nowrap;
+	font-size: 11px;
+	font-weight: normal;
+}
+
+.forum-forumlist .forumRow.reply > div {
+	width: 186px;
+}
+
+.forumRow.reply div {
+	margin-top: 15px;
+}
+
+.forum-forumlist .forumRow.reply .forum-username {
+	padding-right: 3px;
+	float: left;
+}
+
+.forum-forumlist .forumRow.reply span {
+	display: inline-block;
+}
+
+.forumRow.reply .forum-username {
+	max-width: 100px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	float: right;
+	color: #a8a8a8;
+	height: 14px;
+	line-height: 14px;
+	width: 35%;
+}
+
+.forum-forumlist .forumRow.reply .forum-username {
+	padding-right: 3px;
+	float: left;
+}
+
+.forum-forumlist .forumRow.reply span {
+	display: inline-block;
+}
+
+.forumRow.reply .forum-username {
+	max-width: 100px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: #a8a8a8;
+	height: 14px;
+	line-height: 14px;
+}
+
+.forumRow.reply .forum-username a {
+	font-size: 11px;
+}
+
+.forum-start-container .forum-start-forum-bodycell a {
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.forumRow.reply a {
+	white-space: nowrap;
+	font-size: 11px;
+	font-weight: normal;
+}
+
+/* Topics */
+.reply {
+	margin-bottom: 2px;
+}
+
+.reply > .profile {
+    width: 200px;
+    height: 230px;
+    background-color: rgba(7, 7, 7, 0.7);
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+}
+
+.reply > .profile img {
+
+}
+
+.reply > .profile .details {
+	width: 200px;
+	height: 85px;
+	display: table;
+	text-align: center;
+}
+
+.reply > .profile .details > .username {
+	font-size: 15px;
+	text-transform: uppercase;
+	text-decoration: none;
+	border-bottom: #9D9D9D solid 1px;
+}
+
+.reply > .message {
+	padding: 10px 15px;
+	width: 731px;
+    min-height: 280px; /*cuz -20 padding */
+    background-color: rgba(7, 7, 7, 0.7);
+}
+
+.reply > .message > .header {
+	border-bottom: #B0B0B0 solid 1px;
+}
+
+.reply > .message > .header > .date {
+	float: left;
+	font-size: 10px;
+}
+
+.reply > .message > .header > .options {
+	text-align: right;
+	opacity: 0;
+	transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+}
+
+.reply > .message > .header > .options a{
+	text-decoration: none;
+	font-size: 10px;
+}
+
+.reply > .message:hover > .header > .options {
+	opacity: 1;
+}
+
+.reply > .message > .content {
+	border-bottom: #B0B0B0 solid 1px;
+	min-height: 240px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	overflow: hidden;
+}
+
+.reply > .message > .content * {
+	max-width: 730px;
+}
+
+.reply > .message > .content img, object {
+	max-width: 730px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.reply > .message > .footer {
+	height: 40px;
+	overflow: hidden;
+	font-size: 10px;
+	padding-top: 5px;
+}
+
+/*left*/
+.reply.left > .profile {
+	float: left;
+}
+
+.reply.left > .message {
+	float: left;
+	margin-left: 1px;
+}
+
+/*right*/
+.reply.right > .profile {
+	float: right;
+}
+
+.reply.right > .message {
+	float: right;
+	margin-right: 1px;
+}
+
+/*pagination*/
+.pagination {
+
+}
+
+.forum > .buttons {
+	float: left;
+}
+
+.forum > .pagination {
+	float right;
+}

@@ -1,0 +1,351 @@
+body {
+	background: #000000;
+	min-height: 100%;
+	height: 100vh;
+	width: 100%;
+}
+
+#heading {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+   	height: 96px;
+	background: rgba(21, 23, 24, 0.8);
+	text-align: left;
+	-webkit-transition: height 0.5s ease-in-out;
+	-moz-transition: height 0.5s ease-in-out;
+	-webkit-transition: background 1s ease;
+	-moz-transition: background 1s ease;
+	transition: background 1s ease;
+}
+
+#loadingProgress {
+	border-bottom: rgb(0, 118, 0) solid 2px;
+	position: absolute;
+	left: 0;
+	width: 0%;
+	top: 96px;
+	display: none;
+	-webkit-transition: width 0.2s ease-in-out;
+	-moz-transition: width 0.2s ease-in-out;
+	transition: width 0.2s ease-in-out;
+}
+
+#heading.dark {
+	background: rgba(21, 23, 24, 1);
+}
+
+#heading.dark > #menu {
+	background-color: transparent;
+}
+
+#heading .wrapper > .options {
+	float: right;
+	position: absolute;
+	top: 0px;
+	right: 0;
+	text-align: left;
+	width: 250px;
+	z-index: 99999;
+}
+
+#heading .wrapper > .options.left {
+	float: left;
+	left: 0;
+}
+
+#heading .wrapper > .options.right {
+	float: right;
+	right: 0;
+}
+
+#heading .wrapper > .options .miscellaneous {
+	margin-top: 10px;
+	width: 22px;
+	float: left;
+	height: 38px;
+	padding-right: 10px;
+}
+
+#heading .wrapper > .options > .miscellaneous:hover  > .menu {
+	display: block;
+}
+
+#heading .wrapper > .options > .miscellaneous > .menu {
+	position: absolute;
+	width: 215px;
+	/*height: 160px;*/
+    left: 0px;
+    top: 48px;
+    background-color: black;
+    display: none;
+}
+
+#heading .wrapper > .options > .miscellaneous > .menu ul {
+
+}
+
+#heading .wrapper > .options > .miscellaneous > .menu ul li {
+	border-bottom: 1px solid #30373D;
+	padding: 0px;
+}
+
+#heading .wrapper > .options > .miscellaneous > .menu ul li a {
+	font-size: 15px;
+	text-decoration: none;
+	margin: 0px;
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+}
+
+#heading .wrapper > .options > .miscellaneous > .menu ul li:hover {
+	background-color: rgb(47, 47, 47);
+}
+
+#heading .wrapper > .options > .profile {
+	width: auto;
+	float: right;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#heading .wrapper > .options > .profile:hover {
+	cursor: pointer;
+	background-color: rgba(7, 7, 7, 0.7);
+}
+
+#heading .wrapper > .options > .profile:hover  > .menu {
+	display: block;
+}
+
+#heading .wrapper > .options > .profile > .menu {
+	position: absolute;
+	width: 215px;
+	/*height: 160px;*/
+    right: 0px;
+    top: 48px;
+    background-color: black;
+    display: none;
+}
+
+#heading .wrapper > .options > .profile > .menu ul {
+
+}
+
+#heading .wrapper > .options > .profile > .menu ul li {
+	border-bottom: 1px solid #30373D;
+	padding: 0px;
+}
+
+#heading .wrapper > .options > .profile > .menu ul li a {
+	font-size: 15px;
+	text-decoration: none;
+	margin: 0px;
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+}
+
+#heading .wrapper > .options > .profile > .menu ul li:hover {
+	background-color: rgb(47, 47, 47);
+}
+
+#heading .wrapper > .options > .profile > .avatar {
+	float: right;
+	border-radius: 100%;
+}
+
+#heading .wrapper > .options > .profile > .username {
+	float: right;
+	padding-top: 16.5px;
+	padding-right: 10px;
+	text-decoration: none;
+	max-width: 86px;
+	overflow: hidden;
+	padding-bottom: 17px;
+}
+
+#heading .wrapper {
+	position: relative;
+	width: 992px;
+	margin-right: auto;
+	margin-left: auto;
+	height: 48px;
+	text-align: center;
+}
+
+#heading #logo {
+	display: inline-block;
+}
+
+#menu {
+	height: 47px;
+	position: relative;
+	border-top: 1px solid #000000;
+	z-index: 1;
+	background-color: rgba(0, 0, 0, 0.55);
+	-webkit-transition: height 0.5s ease-in-out;
+	-moz-transition: height 0.5s ease-in-out;
+	-webkit-transition: background 1s ease;
+	-moz-transition: background 1s ease;
+	transition: background 1s ease;
+}
+
+#background {
+	position: fixed;
+	width: 1920px;
+	height: 1080px;
+	background-position: center;
+	background: url({T_THEME_PATH}/bg/poster.jpg);
+	background-size: cover;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+#backgroundVideo {
+	opacity: 0;
+	z-index: -1;
+	width: 100%;
+	position: absolute;
+	height: 1080px;
+	-webkit-transition: opacity 8s ease;
+	-moz-transition: opacity 8s ease;
+	transition: opacity 8s ease;
+}
+
+#backgroundVideo.show {
+	opacity: 1;
+}
+
+.alert {
+	position: relative;
+	background-color: rgba(0, 0, 0, 0.2);
+	padding: 0 8px;
+	font-family: Conv_Purista light, sans-serif;
+	font-size: 15px;
+	line-height: 23px;
+	min-height: 23px;
+	margin-bottom: 1px;
+	text-transform: uppercase;
+	text-align: left;
+	color: #fff;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	display: inline-block;
+	width: 100%;
+}
+
+.alert * {
+	line-height: 50px;
+}
+
+.alert i {
+	vertical-align: middle;
+}
+
+.alert.info {
+	color: #FFFFFF;
+	text-shadow: 0 0 4px #000000;
+}
+
+#wrapper::before {
+	position: relative;
+	display: block;
+	content: "";
+	height: 112px;
+}
+
+#wrapper {
+	position: relative;
+	width: 992px;
+	min-height: 100vh;
+	margin-right: auto;
+	margin-left: auto;
+	z-index: 1;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#content {
+	position: relative;	
+	width: 100%;
+	min-height: 800px;
+}
+
+
+/* menu */
+#heading #menu {
+
+}
+
+#heading #menu .wrapper ul{
+	
+}
+
+#heading #menu .wrapper ul > li:first-child{
+	border-left: 1px solid #353a3f;
+}
+
+#heading #menu .wrapper ul > li{
+	float: left;
+	border-right: 1px solid #30373D;
+	color: #000;
+	cursor: default;
+	list-style: none;
+	min-width: 100px;
+}
+
+#heading #menu .wrapper ul > li.active, #heading #menu .wrapper ul > li:hover{
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+#heading #menu .wrapper ul > li:hover > a {
+	color: #FFFFFF;
+}
+
+#heading #menu .wrapper ul > li > a{
+	position: relative;
+	display: block;
+	color: #E8E8E8;
+	font-size: 13px;
+	height: 47px;
+	line-height: 47px;
+	padding: 0 10px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: Conv_Purista light, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+}
+
+#heading #menu .wrapper ul > li.active > a {
+	color: #FFFFFF;
+}
+
+.pageTitle {
+	text-align: left;
+	margin-top: 20px;
+}
+
+.pageTitle h1 {
+	background-color: rgba(7, 7, 7, 0.6);
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#breadcrums {
+	margin-bottom: 10px;
+	background-color: rgba(7, 7, 7, 0.6);
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 11px;
+	padding-left: 5px;
+}

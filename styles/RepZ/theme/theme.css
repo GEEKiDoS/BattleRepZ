@@ -1,0 +1,228 @@
+html {
+	line-height: 1;
+}
+
+body, h1, h2, h3, h4, h5, a {
+	color: #fff;
+	font-family: Conv_Purista light, sans-serif;
+	font-size: 12px;
+}
+
+h1 {
+	position: relative;
+	display: inline-block;
+	line-height: 39px;
+	margin: 0 0 16px 0;
+	padding: 0 16px;
+	padding-top: 1px;
+	letter-spacing: -1px;
+	color: #fff;
+	font-size: 30px;
+	line-height: 40px;
+	margin-bottom: 8px;
+	/*font-family: Purista, sans-serif;*/
+	font-family: Conv_Purista light, sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+
+button, input, select, textarea {
+    background-color: rgba(7, 7, 7, 0.6);
+    border: none;
+    color: white;
+    padding: 10px;
+    outline: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+button:active, button:hover, input:active, input:hover {
+    background-color: rgba(7, 7, 7, 0.8);
+    border: none;
+    color: white;
+    padding: 10px;
+    outline: 0;
+}
+
+.delimiter {
+	clear:both;
+}
+
+#pageActions {
+ 	position: absolute;
+    right: 0px;
+    margin-top: -77px;
+}
+
+#pageActions.noBreadCrums {
+	margin-top: -45px;
+}
+
+/*
+PHPBB tweaks
+*/
+
+.panel, .display-options {
+	background-color: rgba(7, 7, 7, 0.6);
+    border: none;
+    color: white;
+    padding: 10px;
+    outline: 0;
+    margin-bottom: 10px;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: rgba(7, 7, 7, 0.6) !important;
+    color: white !important;
+}
+
+#content #login .inner {
+	width: 225px;
+	margin: auto;
+}
+
+#login .inner .content fieldset dl {
+	margin-bottom: 10px;
+}
+
+#content #remind .inner {
+	width: 225px;
+	margin: auto;
+}
+
+#remind .inner .content fieldset dl {
+	margin-bottom: 10px;
+}
+
+#content #register .inner {
+
+}
+
+#content #register .panel .inner fieldset dl {
+	margin-bottom: 10px;
+}
+
+#content #message .inner {
+	text-align: center;
+}
+
+fieldset .error {
+	color: #EAA1A1;
+	margin-bottom: 10px;
+}
+
+textarea {
+	width:100%;
+}
+
+#qr_postform .panel {
+	width: 570px;
+	margin: auto;
+	margin-bottom: 10px;
+}
+
+#qr_postform .panel div fieldset div textarea {
+	width: 550px;
+}
+
+.submit-buttons {
+	text-align: right
+}
+
+.display-options {
+	text-align: center;
+}
+
+#sb_friends {
+	z-index: 99999;
+}
+
+#format-buttons {
+	margin-bottom: 5px;
+}
+
+#message-box textarea {
+	width: 950px;
+	background-color: transparent;
+	border: rgb(216, 216, 216) 1px solid;
+}
+
+/* CP tabbed menu
+----------------------------------------*/
+#tabs {
+	line-height: normal;
+	margin: 20px 0 0px 0px;
+	min-width: 570px;
+	height:35px;
+	background-color: rgba(7, 7, 7, 0.6);
+}
+
+#tabs ul {
+	margin:0;
+	padding: 0;
+	list-style: none;
+}
+
+#tabs li {
+	display: inline;
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+#tabs a {
+	float: left;
+	background: none no-repeat 0% -35px;
+	margin: 0 1px 0 0;
+	padding: 0 0 0 5px;
+	text-decoration: none;
+	position: relative;
+	cursor: pointer;
+}
+
+#tabs a span {
+	float: left;
+	display: block;
+	background: none no-repeat 100% -35px;
+	padding: 6px 10px 6px 5px;
+	color: #828282;
+	white-space: nowrap;
+}
+
+#tabs a:hover span {
+	color: #bcbcbc;
+}
+
+#tabs .activetab a {
+	background-position: 0 0;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+#tabs .activetab a span {
+	background-position: 100% 0;
+	padding-bottom: 7px;
+	color: #FFFFFF;
+}
+
+#tabs a:hover {
+	background-position: 0 -70px;
+}
+
+#tabs a:hover span {
+	background-position:100% -70px;
+}
+
+#tabs .activetab a:hover {
+	background-position: 0 0;
+}
+
+#tabs .activetab a:hover span {
+	color: #FFFFFF;
+	background-position: 100% 0;
+}
+
+#topicreview {
+	margin-top: 10px;
+}
